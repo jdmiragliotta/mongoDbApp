@@ -21,10 +21,20 @@ db.on('error', function(err) {
 
 
 // Routes
-
+app.get('/', function(req, res) {
+  res.sendFile(process.cwd() + '/index.html');
+});
 
 //Save to DB
-
+app.post("/submit", function(req,res){
+  db.collections.save(req.body, function(err, saved) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(saved);
+    }
+  });
+})
 
 //Get from DB
 

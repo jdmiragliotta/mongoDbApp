@@ -1,4 +1,4 @@
-function getResults(){
+  function getResults(){
   $('#results').empty();
   $.getJSON('/all', function(data) {
     for (var i = 0; i<data.length; i++){
